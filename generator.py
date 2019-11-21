@@ -99,7 +99,8 @@ class GushiwenCookieGenerator(object):
                     alert = self.browser.switch_to.alert
                     self.browser.switch_to.alert.accept()
                     print("验证码错误，刷新页面，重新登陆")
-                    self.new_cookies(usename, password)
+                    new_cookies = self.new_cookies(usename, password)
+                    return new_cookies
                 except:
                     self.browser.get(self.logined_url)
                     if '我的收藏' in self.browser.title:
@@ -111,7 +112,8 @@ class GushiwenCookieGenerator(object):
                         return json.dumps(cookies)
             else:
                 print("验证码获取失败，刷新页面，重新登陆")
-                self.new_cookies(usename, password)
+                new_cookies = self.new_cookies(usename, password)
+                return new_cookies
         except Exception as e:
             print(e.args)
 
