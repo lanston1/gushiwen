@@ -1,11 +1,11 @@
 # gushiwen
 
 ## requirements
-requests
-selenium
-redis
-Flask
-PIL
+requests,
+selenium,
+redis,
+Flask,
+PIL,
 tesserocr
 
 ## 基础配置
